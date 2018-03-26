@@ -1,0 +1,17 @@
+span {
+    display: inline-block;
+}
+
+.range-slider {
+    background-color: #ccc;
+    height: 10px;
+}
+.range-slider button {
+    width: 15px;
+    height: 100%;
+}
+.range-slider .selected {
+    width: 200px;
+    background-color: #0066CC;
+    height: 10px;
+}
