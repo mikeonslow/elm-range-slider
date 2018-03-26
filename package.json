@@ -1,0 +1,19 @@
+{
+  "name": "elm-range-slider",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikeonslow/elm-range-slider.git"
+  },
+  "author": "Mike Onslow",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikeonslow/elm-range-slider/issues"
+  },
+  "homepage": "https://github.com/mikeonslow/elm-range-slider#readme"
+}
