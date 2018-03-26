@@ -1,13 +1,17 @@
 module RangeSlider exposing (..)
 
-import Html exposing (Html, div, h1, header, img, text)
-import Html.Attributes exposing (class, src, width)
+import Html exposing (..)
+import Html.Attributes exposing (..)
+import Html.Events exposing (..)
 import Mouse exposing (Position)
 
 
 type alias Model =
-    { min : Int
+    { mouse : { position : Position }
+    , min : Int
     , max : Int
+    , step : Float
+    , stepWidth : Int
     , from : Int
     , to : Int
     }
@@ -15,10 +19,13 @@ type alias Model =
 
 initialModel : Model
 initialModel =
-    { min = 0
-    , max = 52
+    { mouse = { position = Position 0 0 }
+    , min = 0
+    , max = 30
+    , step = 1
+    , stepWidth = 20
     , from = 1
-    , to = 36
+    , to = 29
     }
 
 
@@ -33,7 +40,28 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    text "Range Slider"
+    div []
+        [ text "Range Slider"
+        , br [] []
+        , br [] []
+        , slider model
+        , br [] []
+        , br [] []
+        , br [] []
+        , model |> toString |> text
+        ]
+
+
+slider model =
+    let
+        sliderWidth =
+            toString <| model.max * model.stepWidth
+    in
+    span [ class "range-slider", style [ ( "width", sliderWidth ++ "px" ) ] ]
+        [ span [ class "range-slider-button" ] []
+        , span [ class "selected", style [ ( "width", "200px" ) ] ] [ text " " ]
+        , span [ class "range-slider-button" ] []
+        ]
 
 
 subscriptions =

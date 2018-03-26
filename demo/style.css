@@ -1,17 +1,26 @@
 span {
     display: inline-block;
 }
-
 .range-slider {
-    background-color: #ccc;
-    height: 10px;
-}
-.range-slider button {
-    width: 15px;
-    height: 100%;
+    position: relative;
+    background-color: #eee;
+    height: 3px;
 }
 .range-slider .selected {
-    width: 200px;
     background-color: #0066CC;
-    height: 10px;
+    position: absolute;
+    top: 0px;
+}
+.range-slider > * {
+    vertical-align: center;
+    display: inline-block;
+    height: 3px;
+}
+.range-slider-button {
+    width: 16px;
+    height: 16px;
+    background-color: #0066CC;
+    border-radius: 50px;
+    position: absolute;
+    top: -7px;
 }
